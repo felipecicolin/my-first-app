@@ -22,6 +22,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-# usercrud
-# rails_user_crud
-# rails_crud_users
