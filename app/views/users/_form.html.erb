@@ -1,0 +1,76 @@
+<%= form_with(model: user) do |form| %>
+<% if user.errors.any? %>
+<div style="color: red">
+  <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+  <ul>
+    <% user.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="position">
+
+  <%= link_to users_path do %>
+  <%= image_tag "back.png"%>
+  <% end %>
+
+  <div class="container" id="swing-in-top-fwd">
+    <form>
+
+      <div class="row">
+        <div class="col-25">
+          <%= form.label :nome, 'Nome: '%>
+        </div>
+        <div class="col-75">
+          <%= form.text_field :nome %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <%= form.label :sobrenome, 'Sobrenome: ' %>
+        </div>
+        <div class="col-75">
+          <%= form.text_field :sobrenome %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <%= form.label :cpf, 'CPF: ' %>
+        </div>
+        <div class="col-75">
+          <%= form.text_field :cpf %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <%= form.label :email, 'E-Mail: ' %>
+        </div>
+        <div class="col-75">
+          <%= form.text_field :email %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <%= form.label :telefone, 'Telefone: ' %>
+        </div>
+        <div class="col-75">
+          <%= form.text_field :telefone, :class => "input" %>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <input type="submit" value="Salvar">
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<% end %>

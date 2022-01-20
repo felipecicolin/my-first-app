@@ -1,0 +1,51 @@
+<h1 class="h1b">Lista de Usuários</h1>
+<br/>
+  <div class="pesquisa swing-in-top-fwd">
+  <%= search_form_for @q do |f| %>
+
+  <%= f.label 'Pesquisa de usuários: ' %>
+  <%= f.search_field :nome_or_sobrenome_or_cpf_or_telefone_or_email_cont, :class =>"input_search" %>
+
+  <button class="procurar">Procurar</button>
+
+  <%end%>
+
+</div>
+<br/>
+
+
+<div class="table-wrapper">
+
+  <table class="fl-table" id="swing-in-top-fwd">
+    <thead>
+      <tr>
+        <th scope="col">Nome: </th>
+        <th scope="col">Sobrenome: </th>
+        <th scope="col">CPF: </th>
+        <th scope="col">Email:</th>
+        <th scope="col">Telefone: </th>
+        <th scope="col"> <%= image_tag "paper.png"%></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @users.each do |user| %>
+      <tr>
+        <td><%= user.nome %></td>
+        <td><%= user.sobrenome %></td>
+        <td><%= user.cpf %></td>
+        <td><%= user.email %></td>
+        <td><%= user.telefone %></td>
+        <td> <%= link_to "Visualizar", user, :class => "linkto" %></td>
+
+      </tr>
+
+      <% end %>
+
+    </tbody>
+
+  </table>
+
+</div>
+
+<p style="color: green"><%= notice %></p>

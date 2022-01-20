@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<div id="<%= dom_id user %>">
+
+  <div class="card">
+
+    <%= link_to users_path do %>
+    <%= image_tag "back1.png", :style =>"float:left; padding:10px;" %>
+    <% end %>
+    <br />
+    <h1><%= user.nome + " " + user.sobrenome %></h1>
+    <p> <%= "CPF: " + user.cpf %> </p>
+    <p> <%= "E-mail: " + user.email %> </p>
+    <p> <%= "Telefone: " + user.telefone %> </p>
+
+    <br />
+    <%= link_to "Editar", edit_user_path(user), :class => "button" %>
+    <br />
+    <br />
+    <%= button_to "Excluir", @user, method: :delete, :class => "button" %>
+
+  </div>
+</div>
