@@ -1,3 +1,3 @@
 # README
 
-This was my first ever rails app, which consists in a simple CRUD app 
+This was my first ever Ruby on Rails app, made with the intention to start learning ruby. The application consists in a simple CRUD app.
