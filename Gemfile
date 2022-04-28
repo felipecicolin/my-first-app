@@ -29,3 +29,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem "bootsnap", "~> 1.11"
