@@ -2615,3 +2615,277 @@ Migrating to RemoveNotNullOnActiveStorageBlobsChecksum (20220428225456)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4163189990823014865)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-04-28 19:56:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IndexController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering index/home.html.erb within layouts/application
+  Rendered index/home.html.erb within layouts/application (Duration: 1772.4ms | Allocations: 82826)
+  Rendered layout layouts/application.html.erb (Duration: 2181.3ms | Allocations: 97425)
+Completed 200 OK in 2294ms (Views: 2198.4ms | ActiveRecord: 0.0ms | Allocations: 101108)
+
+
+Started GET "/users" for ::1 at 2022-04-28 19:56:19 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 733.8ms | Allocations: 17852)
+  Rendered layout layouts/application.html.erb (Duration: 785.9ms | Allocations: 20200)
+Completed 200 OK in 901ms (Views: 787.7ms | ActiveRecord: 1.6ms | Allocations: 22494)
+
+
+Started GET "/users/new" for ::1 at 2022-04-28 19:56:22 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 32.0ms | Allocations: 2458)
+  Rendered users/new.html.erb within layouts/application (Duration: 39.3ms | Allocations: 2772)
+  Rendered layout layouts/application.html.erb (Duration: 92.5ms | Allocations: 5027)
+Completed 200 OK in 120ms (Views: 93.2ms | ActiveRecord: 1.4ms | Allocations: 9798)
+
+
+Started GET "/users" for ::1 at 2022-04-28 19:56:23 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 30.9ms | Allocations: 2228)
+  Rendered layout layouts/application.html.erb (Duration: 84.2ms | Allocations: 4445)
+Completed 200 OK in 99ms (Views: 84.7ms | ActiveRecord: 0.3ms | Allocations: 4827)
+
+
+Started GET "/" for ::1 at 2022-04-28 19:56:24 -0300
+Processing by IndexController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering index/home.html.erb within layouts/application
+  Rendered index/home.html.erb within layouts/application (Duration: 29.2ms | Allocations: 594)
+  Rendered layout layouts/application.html.erb (Duration: 84.7ms | Allocations: 3005)
+Completed 200 OK in 99ms (Views: 85.6ms | ActiveRecord: 0.0ms | Allocations: 3282)
+
+
+Started GET "/users" for ::1 at 2022-04-28 19:56:27 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 30.6ms | Allocations: 2115)
+  Rendered layout layouts/application.html.erb (Duration: 83.4ms | Allocations: 4333)
+Completed 200 OK in 97ms (Views: 83.8ms | ActiveRecord: 0.3ms | Allocations: 4678)
+
+
+Started GET "/users/new" for ::1 at 2022-04-28 19:56:31 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 27.8ms | Allocations: 1579)
+  Rendered users/new.html.erb within layouts/application (Duration: 28.2ms | Allocations: 1660)
+  Rendered layout layouts/application.html.erb (Duration: 80.1ms | Allocations: 3885)
+Completed 200 OK in 94ms (Views: 80.8ms | ActiveRecord: 0.0ms | Allocations: 4176)
+
+
+Started POST "/users" for ::1 at 2022-04-28 19:56:49 -0300
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"Felipe", "sobrenome"=>"Cicolin", "cpf"=>"45995597841", "email"=>"felipecicolinrocha@gmail.com", "telefone"=>"1993588155"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("nome", "sobrenome", "cpf", "email", "telefone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome", "Felipe"], ["sobrenome", "Cicolin"], ["cpf", "45995597841"], ["email", "felipecicolinrocha@gmail.com"], ["telefone", "1993588155"], ["created_at", "2022-04-28 22:56:49.692464"], ["updated_at", "2022-04-28 22:56:49.692464"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (25.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 48ms (ActiveRecord: 25.7ms | Allocations: 3938)
+
+
+Started GET "/users/1" for ::1 at 2022-04-28 19:56:49 -0300
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:65:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 28.3ms | Allocations: 1752)
+  Rendered users/show.html.erb within layouts/application (Duration: 88.1ms | Allocations: 2414)
+  Rendered layout layouts/application.html.erb (Duration: 138.0ms | Allocations: 4654)
+Completed 200 OK in 161ms (Views: 138.7ms | ActiveRecord: 0.3ms | Allocations: 7500)
+
+
+Started GET "/users/1/edit" for ::1 at 2022-04-28 19:56:57 -0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:65:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 28.6ms | Allocations: 1715)
+  Rendered users/edit.html.erb within layouts/application (Duration: 31.8ms | Allocations: 1932)
+  Rendered layout layouts/application.html.erb (Duration: 85.3ms | Allocations: 4150)
+Completed 200 OK in 105ms (Views: 86.1ms | ActiveRecord: 0.3ms | Allocations: 5112)
+
+
+Started GET "/users" for ::1 at 2022-04-28 19:56:58 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 31.4ms | Allocations: 2292)
+  Rendered layout layouts/application.html.erb (Duration: 86.4ms | Allocations: 4509)
+Completed 200 OK in 101ms (Views: 87.0ms | ActiveRecord: 0.3ms | Allocations: 4885)
+
+
+Started GET "/users/new" for ::1 at 2022-04-28 19:57:04 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 29.1ms | Allocations: 1579)
+  Rendered users/new.html.erb within layouts/application (Duration: 29.4ms | Allocations: 1660)
+  Rendered layout layouts/application.html.erb (Duration: 84.6ms | Allocations: 3886)
+Completed 200 OK in 98ms (Views: 85.3ms | ActiveRecord: 0.0ms | Allocations: 4177)
+
+
+Started POST "/users" for ::1 at 2022-04-28 19:57:24 -0300
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"nome"=>"Bruno", "sobrenome"=>"FM", "cpf"=>"1212313213212", "email"=>"123132@gmail.com", "telefone"=>"19393819239"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("nome", "sobrenome", "cpf", "email", "telefone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome", "Bruno"], ["sobrenome", "FM"], ["cpf", "1212313213212"], ["email", "123132@gmail.com"], ["telefone", "19393819239"], ["created_at", "2022-04-28 22:57:24.467871"], ["updated_at", "2022-04-28 22:57:24.467871"]]
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28:in `block in create'
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 21ms (ActiveRecord: 1.5ms | Allocations: 2468)
+
+
+Started GET "/users/2" for ::1 at 2022-04-28 19:57:24 -0300
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:65:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 28.0ms | Allocations: 1146)
+  Rendered users/show.html.erb within layouts/application (Duration: 28.4ms | Allocations: 1244)
+  Rendered layout layouts/application.html.erb (Duration: 80.5ms | Allocations: 3461)
+Completed 200 OK in 95ms (Views: 81.5ms | ActiveRecord: 0.2ms | Allocations: 4258)
+
+
+Started GET "/users/new" for ::1 at 2022-04-28 19:57:26 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 29.4ms | Allocations: 1582)
+  Rendered users/new.html.erb within layouts/application (Duration: 40.5ms | Allocations: 1663)
+  Rendered layout layouts/application.html.erb (Duration: 94.6ms | Allocations: 3888)
+Completed 200 OK in 108ms (Views: 95.6ms | ActiveRecord: 0.0ms | Allocations: 4175)
+
+
+Started GET "/users" for ::1 at 2022-04-28 19:57:27 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 34.2ms | Allocations: 2260)
+  Rendered layout layouts/application.html.erb (Duration: 89.2ms | Allocations: 4477)
+Completed 200 OK in 104ms (Views: 89.8ms | ActiveRecord: 0.3ms | Allocations: 4814)
+
+
+Started GET "/users?q%5Bnome_or_sobrenome_or_cpf_or_telefone_or_email_cont%5D=fe" for ::1 at 2022-04-28 19:57:31 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"nome_or_sobrenome_or_cpf_or_telefone_or_email_cont"=>"fe"}}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" WHERE (((("users"."nome" ILIKE '%fe%' OR "users"."sobrenome" ILIKE '%fe%') OR "users"."cpf" ILIKE '%fe%') OR "users"."telefone" ILIKE '%fe%') OR "users"."email" ILIKE '%fe%')[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 28.0ms | Allocations: 2299)
+  Rendered layout layouts/application.html.erb (Duration: 76.9ms | Allocations: 4516)
+Completed 200 OK in 90ms (Views: 77.2ms | ActiveRecord: 0.4ms | Allocations: 5551)
+
+
+Started GET "/users?q%5Bnome_or_sobrenome_or_cpf_or_telefone_or_email_cont%5D=fe" for ::1 at 2022-04-28 19:57:45 -0300
+Processing by UsersController#index as HTML
+  Parameters: {"q"=>{"nome_or_sobrenome_or_cpf_or_telefone_or_email_cont"=>"fe"}}
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users" WHERE (((("users"."nome" ILIKE '%fe%' OR "users"."sobrenome" ILIKE '%fe%') OR "users"."cpf" ILIKE '%fe%') OR "users"."telefone" ILIKE '%fe%') OR "users"."email" ILIKE '%fe%')[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 37.4ms | Allocations: 2240)
+  Rendered layout layouts/application.html.erb (Duration: 99.8ms | Allocations: 4457)
+Completed 200 OK in 115ms (Views: 100.7ms | ActiveRecord: 0.4ms | Allocations: 5291)
+
+
+Started GET "/users" for ::1 at 2022-04-28 19:57:47 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 30.8ms | Allocations: 2260)
+  Rendered layout layouts/application.html.erb (Duration: 82.6ms | Allocations: 4477)
+Completed 200 OK in 97ms (Views: 83.1ms | ActiveRecord: 0.3ms | Allocations: 4814)
+
+
+Started GET "/users/new" for ::1 at 2022-04-28 19:57:47 -0300
+Started GET "/users/new" for ::1 at 2022-04-28 19:57:47 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (Duration: 31.3ms | Allocations: 2020)
+  Rendered users/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 2123)
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 29.8ms | Allocations: 2025)
+  Rendered users/new.html.erb within layouts/application (Duration: 30.6ms | Allocations: 2115)
+  Rendered layout layouts/application.html.erb (Duration: 85.7ms | Allocations: 6832)
+Completed 200 OK in 99ms (Views: 86.8ms | ActiveRecord: 0.0ms | Allocations: 7194)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 80.5ms | Allocations: 6543)
+Completed 200 OK in 96ms (Views: 81.5ms | ActiveRecord: 0.0ms | Allocations: 8330)
+
+
+Started GET "/users" for ::1 at 2022-04-28 19:57:55 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT DISTINCT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:32
+  Rendered users/index.html.erb within layouts/application (Duration: 34.6ms | Allocations: 2258)
+  Rendered layout layouts/application.html.erb (Duration: 92.2ms | Allocations: 4475)
+Completed 200 OK in 107ms (Views: 92.7ms | ActiveRecord: 0.3ms | Allocations: 4812)
+
+
+Started GET "/users/new" for ::1 at 2022-04-28 19:57:57 -0300
+Started GET "/users/new" for ::1 at 2022-04-28 19:57:57 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (Duration: 30.8ms | Allocations: 2022)
+  Rendered users/new.html.erb within layouts/application (Duration: 31.3ms | Allocations: 2125)
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 23.3ms | Allocations: 1966)
+  Rendered users/new.html.erb within layouts/application (Duration: 24.4ms | Allocations: 2537)
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 6830)
+Completed 200 OK in 89ms (Views: 76.7ms | ActiveRecord: 0.0ms | Allocations: 7189)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 69.6ms | Allocations: 6540)
+Completed 200 OK in 84ms (Views: 70.4ms | ActiveRecord: 0.0ms | Allocations: 8327)
+
+
+Started GET "/" for ::1 at 2022-04-28 19:57:59 -0300
+Processing by IndexController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering index/home.html.erb within layouts/application
+  Rendered index/home.html.erb within layouts/application (Duration: 31.6ms | Allocations: 596)
+  Rendered layout layouts/application.html.erb (Duration: 87.4ms | Allocations: 3006)
+Completed 200 OK in 101ms (Views: 88.2ms | ActiveRecord: 0.0ms | Allocations: 3276)
+
+
